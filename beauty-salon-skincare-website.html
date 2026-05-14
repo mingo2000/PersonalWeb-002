@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumina Skin Atelier | Personalized Facial Treatments</title>
+  <meta name="description" content="Premium personalized facial skincare treatments for hydration, acne, brightening, anti-aging and sensitive skin repair. Book your glowing skin consultation today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #fbf7f1;
+      --white: #ffffff;
+      --beige: #eadfce;
+      --nude: #eeced0;
+      --pink: #f7e7e5;
+      --gold: #b9935a;
+      --gold-dark: #8a6836;
+      --text: #342b27;
+      --muted: #766b64;
+      --card: rgba(255,255,255,.78);
+      --shadow: 0 24px 70px rgba(76, 54, 41, .13);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    .eyebrow { color: var(--gold-dark); font-weight: 700; letter-spacing: .16em; text-transform: uppercase; font-size: .76rem; }
+    h1, h2, h3 { font-family: "Cormorant Garamond", serif; line-height: .95; margin: 0; }
+    h1 { font-size: clamp(3rem, 8vw, 6.8rem); letter-spacing: -.045em; }
+    h2 { font-size: clamp(2.35rem, 5vw, 4.6rem); letter-spacing: -.035em; }
+    h3 { font-size: 1.8rem; }
+    p { color: var(--muted); margin: 0; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: .25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn-primary { background: linear-gradient(135deg, #caa46c, #9f7940); color: white; box-shadow: 0 14px 30px rgba(159, 121, 64, .28); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 40px rgba(159, 121, 64, .34); }
+    .btn-soft { background: rgba(255,255,255,.72); border-color: rgba(185,147,90,.28); color: var(--text); }
+    .btn-soft:hover { background: white; transform: translateY(-2px); }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(251,247,241,.76);
+      border-bottom: 1px solid rgba(185,147,90,.13);
+    }
+    .nav {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo { font-family: "Cormorant Garamond", serif; font-size: 1.75rem; font-weight: 700; letter-spacing: -.03em; }
+    .logo span { color: var(--gold); }
+    .nav-links { display: flex; align-items: center; gap: 24px; font-size: .93rem; color: var(--muted); }
+    .nav-links a:hover { color: var(--gold-dark); }
+
+    .hero {
+      overflow: hidden;
+      position: relative;
+      padding: 72px 0 58px;
+      background:
+        radial-gradient(circle at 84% 16%, rgba(238,206,208,.65), transparent 34%),
+        radial-gradient(circle at 18% 78%, rgba(234,223,206,.72), transparent 34%);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 46px; align-items: center; }
+    .hero-copy { position: relative; z-index: 2; }
+    .hero h1 { margin: 16px 0 22px; }
+    .hero p { max-width: 590px; font-size: 1.08rem; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
+    .trust-row { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 34px; }
+    .trust-item { background: rgba(255,255,255,.64); border: 1px solid rgba(185,147,90,.12); padding: 14px 16px; border-radius: 18px; min-width: 135px; }
+    .trust-item strong { display: block; font-size: 1.25rem; color: var(--text); }
+    .trust-item span { font-size: .83rem; color: var(--muted); }
+
+    .hero-card {
+      position: relative;
+      min-height: 570px;
+      border-radius: 46px;
+      padding: 18px;
+      background: linear-gradient(145deg, rgba(255,255,255,.82), rgba(247,231,229,.52));
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.9);
+    }
+    .portrait {
+      height: 100%;
+      min-height: 534px;
+      border-radius: 34px;
+      background:
+        linear-gradient(rgba(255,255,255,.08), rgba(52,43,39,.08)),
+        url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1000&q=85') center/cover;
+    }
+    .floating-card {
+      position: absolute;
+      left: -22px;
+      bottom: 38px;
+      width: 260px;
+      padding: 18px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.9);
+      box-shadow: 0 18px 45px rgba(52,43,39,.14);
+      border: 1px solid rgba(185,147,90,.16);
+    }
+    .floating-card strong { display: block; margin-bottom: 4px; }
+
+    section { padding: 86px 0; }
+    .section-head { display: flex; justify-content: space-between; gap: 30px; align-items: end; margin-bottom: 38px; }
+    .section-head p { max-width: 510px; }
+
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 32px; align-items: stretch; }
+    .about-image { min-height: 430px; border-radius: var(--radius); background: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=85') center/cover; box-shadow: var(--shadow); }
+    .about-content { background: var(--card); border: 1px solid rgba(185,147,90,.14); border-radius: var(--radius); padding: 38px; box-shadow: var(--shadow); }
+    .check-list { display: grid; gap: 14px; margin-top: 26px; }
+    .check-list div { display: flex; gap: 12px; align-items: flex-start; color: var(--muted); }
+    .check-list b { color: var(--text); }
+    .tick { color: var(--gold-dark); font-weight: 900; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+    .service-card {
+      padding: 26px 22px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.76);
+      border: 1px solid rgba(185,147,90,.13);
+      box-shadow: 0 14px 42px rgba(76,54,41,.08);
+      transition: .25s ease;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .icon { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--pink), #fff); color: var(--gold-dark); margin-bottom: 20px; font-size: 1.35rem; }
+    .service-card p { font-size: .92rem; margin-top: 10px; }
+
+    .benefits { background: linear-gradient(180deg, rgba(255,255,255,.5), rgba(247,231,229,.45)); }
+    .benefit-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .benefit { padding: 26px; background: rgba(255,255,255,.7); border-radius: 24px; border: 1px solid rgba(185,147,90,.13); }
+    .benefit strong { display: block; font-size: 1.05rem; margin-bottom: 8px; }
+
+    .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .result-card { overflow: hidden; border-radius: 28px; background: white; box-shadow: var(--shadow); border: 1px solid rgba(185,147,90,.12); }
+    .result-img { height: 260px; background-size: cover; background-position: center; }
+    .result-body { padding: 22px; }
+    .tag { display: inline-flex; padding: 7px 12px; border-radius: 999px; background: var(--pink); color: var(--gold-dark); font-size: .78rem; font-weight: 800; margin-bottom: 10px; }
+
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .quote { background: rgba(255,255,255,.78); border: 1px solid rgba(185,147,90,.13); border-radius: 28px; padding: 28px; box-shadow: 0 12px 34px rgba(76,54,41,.08); }
+    .stars { color: var(--gold); letter-spacing: 2px; margin-bottom: 14px; }
+    .client { margin-top: 20px; font-weight: 800; color: var(--text); }
+
+    .process-wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; counter-reset: steps; }
+    .step { position: relative; padding: 28px; border-radius: 28px; background: #fff; border: 1px solid rgba(185,147,90,.13); }
+    .step::before { counter-increment: steps; content: "0" counter(steps); display: inline-flex; width: 44px; height: 44px; border-radius: 50%; align-items: center; justify-content: center; background: var(--gold); color: white; font-weight: 800; margin-bottom: 22px; }
+
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    details { background: rgba(255,255,255,.82); border: 1px solid rgba(185,147,90,.13); border-radius: 20px; padding: 20px 22px; }
+    summary { cursor: pointer; font-weight: 800; color: var(--text); }
+    details p { margin-top: 12px; }
+
+    .contact-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 38px;
+      padding: 46px;
+      background:
+        linear-gradient(135deg, rgba(52,43,39,.84), rgba(138,104,54,.72)),
+        url('https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=1200&q=85') center/cover;
+      color: white;
+      box-shadow: var(--shadow);
+    }
+    .contact-card p { color: rgba(255,255,255,.82); max-width: 620px; margin-top: 16px; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+    .contact-info { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 34px; }
+    .info-box { padding: 18px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); border-radius: 20px; }
+    .info-box span { display: block; color: rgba(255,255,255,.7); font-size: .84rem; }
+    .info-box b { color: #fff; }
+
+    footer { padding: 34px 0; color: var(--muted); font-size: .92rem; }
+    .footer-row { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 60;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #25D366;
+      color: white;
+      box-shadow: 0 14px 32px rgba(37,211,102,.35);
+      font-size: 1.55rem;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links { display: none; }
+      .hero-grid, .about-grid { grid-template-columns: 1fr; }
+      .hero-card { min-height: 440px; }
+      .portrait { min-height: 410px; }
+      .floating-card { left: 16px; bottom: 24px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .benefit-grid, .results-grid, .testimonials-grid, .process-wrap { grid-template-columns: repeat(2, 1fr); }
+      .section-head { display: block; }
+      .section-head p { margin-top: 14px; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(100% - 24px, 1120px); }
+      .hero { padding-top: 48px; }
+      section { padding: 64px 0; }
+      .hero-actions .btn, .contact-actions .btn { width: 100%; }
+      .trust-row { gap: 10px; }
+      .trust-item { flex: 1 1 42%; min-width: 0; }
+      .hero-card { border-radius: 30px; padding: 10px; min-height: 390px; }
+      .portrait { min-height: 370px; border-radius: 24px; }
+      .floating-card { width: calc(100% - 32px); }
+      .services-grid, .benefit-grid, .results-grid, .testimonials-grid, .process-wrap, .faq-grid, .contact-info { grid-template-columns: 1fr; }
+      .about-content, .contact-card { padding: 28px; border-radius: 28px; }
+      .result-img { height: 230px; }
+      .whatsapp-float { width: 54px; height: 54px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#">Lumina<span>.</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#results">Results</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-primary" href="https://wa.me/60123456789?text=Hi%20Lumina%2C%20I%20would%20like%20to%20book%20a%20facial%20consultation." target="_blank" rel="noopener">Book Now</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Personalized Facial Skincare</div>
+          <h1>Reveal calm, luminous, healthy skin.</h1>
+          <p>Premium facial treatments tailored to your skin goals — hydration, acne care, brightening, anti-aging and sensitive skin repair, all in a soothing salon experience.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/60123456789?text=Hi%20Lumina%2C%20I%20want%20to%20book%20my%20skin%20consultation." target="_blank" rel="noopener">Book via WhatsApp</a>
+            <a class="btn btn-soft" href="#services">View Treatments</a>
+          </div>
+          <div class="trust-row">
+            <div class="trust-item"><strong>1:1</strong><span>Skin analysis</span></div>
+            <div class="trust-item"><strong>5+</strong><span>Skin concerns</span></div>
+            <div class="trust-item"><strong>Glow</strong><span>Focused results</span></div>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Facial treatment image">
+          <div class="portrait"></div>
+          <div class="floating-card">
+            <strong>New Client Glow Facial</strong>
+            <p>Consultation + customized treatment plan for your skin type.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-image" aria-label="Spa skincare room"></div>
+        <div class="about-content">
+          <div class="eyebrow">About Lumina</div>
+          <h2>Skincare that feels personal, not generic.</h2>
+          <p style="margin-top:18px;">Every facial begins with a gentle skin consultation so we can understand your skin condition, lifestyle and goals before choosing the best treatment approach.</p>
+          <div class="check-list">
+            <div><span class="tick">✓</span><span><b>Customized protocols</b> for dry, oily, acne-prone, dull, mature or sensitive skin.</span></div>
+            <div><span class="tick">✓</span><span><b>Premium salon experience</b> with soft ambience, calm touch and skin-safe care.</span></div>
+            <div><span class="tick">✓</span><span><b>Clear aftercare advice</b> so your results continue after your appointment.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Our Treatments</div>
+            <h2>Choose your skin goal.</h2>
+          </div>
+          <p>Each treatment is adapted after consultation, so your facial supports what your skin actually needs that day.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card"><div class="icon">💧</div><h3>Hydration</h3><p>Replenish moisture, soften fine dehydration lines and restore supple glow.</p></article>
+          <article class="service-card"><div class="icon">🌿</div><h3>Acne Care</h3><p>Deep cleansing, calming care and balanced support for breakout-prone skin.</p></article>
+          <article class="service-card"><div class="icon">✨</div><h3>Brightening</h3><p>Improve dullness and uneven tone for a clearer, fresh-looking complexion.</p></article>
+          <article class="service-card"><div class="icon">🌸</div><h3>Anti-Aging</h3><p>Nourishing facial care to firm, smooth and revive tired-looking skin.</p></article>
+          <article class="service-card"><div class="icon">🤍</div><h3>Sensitive Repair</h3><p>Gentle barrier-focused care for redness, tightness and easily irritated skin.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Why Clients Love Us</div>
+            <h2>Designed for comfort and visible confidence.</h2>
+          </div>
+        </div>
+        <div class="benefit-grid">
+          <div class="benefit"><strong>Personalized care</strong><p>No copy-paste facials — every session is adjusted to your skin.</p></div>
+          <div class="benefit"><strong>Relaxing experience</strong><p>Soft tones, gentle touch and a premium calming atmosphere.</p></div>
+          <div class="benefit"><strong>Skin education</strong><p>Understand your skin better with simple, useful aftercare guidance.</p></div>
+          <div class="benefit"><strong>High-conversion booking</strong><p>Fast WhatsApp booking makes it easy for clients to take action.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Before / After</div>
+            <h2>Realistic skin transformations.</h2>
+          </div>
+          <p>Use this section to showcase client-approved photos. Replace the sample images with your actual results.</p>
+        </div>
+        <div class="results-grid">
+          <article class="result-card">
+            <div class="result-img" style="background-image:url('https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=900&q=85')"></div>
+            <div class="result-body"><span class="tag">Hydration Glow</span><h3>Plumper, calmer skin</h3><p>Ideal for dry, tired or tight-feeling skin.</p></div>
+          </article>
+          <article class="result-card">
+            <div class="result-img" style="background-image:url('https://images.unsplash.com/photo-1608979048467-6194dabc6a3d?auto=format&fit=crop&w=900&q=85')"></div>
+            <div class="result-body"><span class="tag">Clear Skin</span><h3>Balanced complexion</h3><p>Supportive care for oily and breakout-prone skin.</p></div>
+          </article>
+          <article class="result-card">
+            <div class="result-img" style="background-image:url('https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=900&q=85')"></div>
+            <div class="result-body"><span class="tag">Brightening</span><h3>Fresh, even radiance</h3><p>For dullness, uneven tone and lack of glow.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Testimonials</div>
+            <h2>What clients say.</h2>
+          </div>
+        </div>
+        <div class="testimonials-grid">
+          <div class="quote"><div class="stars">★★★★★</div><p>“My skin felt so hydrated and calm after one session. The consultation made everything feel truly personalized.”</p><div class="client">Alyssa T.</div></div>
+          <div class="quote"><div class="stars">★★★★★</div><p>“Beautiful salon, gentle treatment and no hard selling. I loved how clear the aftercare advice was.”</p><div class="client">Mei Ling</div></div>
+          <div class="quote"><div class="stars">★★★★★</div><p>“I booked for acne care and my skin looks less congested. The whole process felt premium and comfortable.”</p><div class="client">Nadia R.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Treatment Process</div>
+            <h2>Simple, calm and effective.</h2>
+          </div>
+        </div>
+        <div class="process-wrap">
+          <div class="step"><h3>Consult</h3><p>We review your skin concerns, routine and goals.</p></div>
+          <div class="step"><h3>Customize</h3><p>Your facial is selected and adjusted for your skin type.</p></div>
+          <div class="step"><h3>Treat</h3><p>Relax through a premium, skin-focused treatment experience.</p></div>
+          <div class="step"><h3>Aftercare</h3><p>Leave with simple guidance to maintain your glow.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">FAQ</div>
+            <h2>Before you book.</h2>
+          </div>
+        </div>
+        <div class="faq-grid">
+          <details open><summary>Which facial should I choose?</summary><p>If unsure, book a consultation. We will recommend the best treatment after checking your skin condition.</p></details>
+          <details><summary>Is it suitable for sensitive skin?</summary><p>Yes. Sensitive repair treatments are designed to be gentle and barrier-supportive.</p></details>
+          <details><summary>How often should I come?</summary><p>Most clients benefit from a facial every 3–4 weeks, depending on skin goals and condition.</p></details>
+          <details><summary>Can I book through WhatsApp?</summary><p>Yes. Tap any booking button and send us your preferred date, time and skin concern.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div class="eyebrow" style="color:#f6dca8;">Book Your Glow</div>
+          <h2>Ready for skin that feels cared for?</h2>
+          <p>Message us on WhatsApp to reserve your consultation. Tell us your skin concern and preferred appointment time — we’ll guide you from there.</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="https://wa.me/60123456789?text=Hi%20Lumina%2C%20I%20would%20like%20to%20book%20a%20facial.%20My%20skin%20concern%20is%3A" target="_blank" rel="noopener">WhatsApp Booking</a>
+            <a class="btn btn-soft" href="tel:+60123456789">Call Salon</a>
+          </div>
+          <div class="contact-info">
+            <div class="info-box"><span>Location</span><b>Your Salon Address</b></div>
+            <div class="info-box"><span>Hours</span><b>10AM – 8PM Daily</b></div>
+            <div class="info-box"><span>WhatsApp</span><b>+60 12-345 6789</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© 2026 Lumina Skin Atelier. All rights reserved.</div>
+      <div>Premium facial skincare • Hydration • Acne • Brightening • Anti-aging</div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/60123456789?text=Hi%20Lumina%2C%20I%20want%20to%20book%20a%20facial%20appointment." target="_blank" rel="noopener" aria-label="Book on WhatsApp">☘</a>
+</body>
+</html>
