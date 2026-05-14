@@ -175,6 +175,31 @@
     .step { position: relative; padding: 28px; border-radius: 28px; background: #fff; border: 1px solid rgba(185,147,90,.13); }
     .step::before { counter-increment: steps; content: "0" counter(steps); display: inline-flex; width: 44px; height: 44px; border-radius: 50%; align-items: center; justify-content: center; background: var(--gold); color: white; font-weight: 800; margin-bottom: 22px; }
 
+    .ai-analysis-section { background: linear-gradient(180deg, rgba(247,231,229,.38), rgba(251,247,241,.2)); }
+    .ai-widget-embed {
+      overflow: hidden;
+      border-radius: 38px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(185,147,90,.16);
+      box-shadow: var(--shadow);
+    }
+    .ai-widget-frame {
+      display: block;
+      width: 100%;
+      min-height: 980px;
+      border: 0;
+      background: transparent;
+    }
+    .ai-note {
+      margin-top: 16px;
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(185,147,90,.13);
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
     .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     details { background: rgba(255,255,255,.82); border: 1px solid rgba(185,147,90,.13); border-radius: 20px; padding: 20px 22px; }
     summary { cursor: pointer; font-weight: 800; color: var(--text); }
@@ -242,6 +267,7 @@
       .services-grid, .benefit-grid, .results-grid, .testimonials-grid, .process-wrap, .faq-grid, .contact-info { grid-template-columns: 1fr; }
       .about-content, .contact-card { padding: 28px; border-radius: 28px; }
       .result-img { height: 230px; }
+      .ai-widget-frame { min-height: 1180px; }
       .whatsapp-float { width: 54px; height: 54px; }
     }
   </style>
@@ -396,6 +422,22 @@
           <div class="step"><h3>Treat</h3><p>Relax through a premium, skin-focused treatment experience.</p></div>
           <div class="step"><h3>Aftercare</h3><p>Leave with simple guidance to maintain your glow.</p></div>
         </div>
+      </div>
+    </section>
+
+    <section id="ai-skin-analysis" class="ai-analysis-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">AI Skin Analysis</div>
+            <h2>Find your best facial match.</h2>
+          </div>
+          <p>Let clients upload a selfie, receive a beauty-only skin estimate, and get guided toward the most suitable treatment package.</p>
+        </div>
+        <div class="ai-widget-embed">
+          <iframe class="ai-widget-frame" src="ai-skin-analysis-widget.html" title="AI Skin Analysis Widget" loading="lazy"></iframe>
+        </div>
+        <div class="ai-note"><strong>Note:</strong> This is for beauty guidance only and is not a medical diagnosis. For production AI vision, connect the widget to your backend API endpoint.</div>
       </div>
     </section>
 
